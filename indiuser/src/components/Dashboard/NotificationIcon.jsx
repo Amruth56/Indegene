@@ -1,12 +1,14 @@
 import React from "react";
 
 function NotificationIcon({ count }) {
+  let cnt  = 0;
+  if(count > 0) cnt = count 
   return (
     <div className="relative">
       <button aria-label={`${count} notifications`}>
         <svg
-          width="14"
-          height="16"
+          width="40"
+          height="20"
           viewBox="0 0 14 16"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +27,7 @@ function NotificationIcon({ count }) {
         </svg>
       </button>
       <span className="absolute top-0 right-0 flex items-center justify-center w-4 h-4 text-xs text-white bg-red-500 rounded-full">
-        {count}
+        {cnt}
       </span>
     </div>
   );

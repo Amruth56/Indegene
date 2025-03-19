@@ -47,7 +47,7 @@ function Dashboard() {
               </svg>
               <span>Quick Apply</span>
             </button>
-            <NotificationIcon count={3} />
+            <NotificationIcon count={2} />
           </div>
         </header>
 
