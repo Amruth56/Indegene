@@ -21,7 +21,7 @@ function Dashboard() {
       <section className="flex flex-col flex-1 gap-8 p-8 max-sm:p-4">
         <header className="flex justify-between items-center">
           <h1 className="text-2xl font-bold leading-6 text-black">
-            Welcome back, Sarah!
+            Welcome back, Dharani!
           </h1>
           <div className="flex gap-4 items-center">
             <button className="flex gap-2 items-center px-4 py-2.5 text-white bg-blue-600 rounded-lg">
@@ -85,17 +85,17 @@ function Dashboard() {
           </div>
           <div className="flex gap-4 max-md:flex-wrap">
             <JobCard
-              title="Senior UX Designer"
-              company="Product Team"
-              location="San Francisco"
-              salary="$120k - $150k"
+              title="HR Manager"
+              company="Development Team"
+              location="India"
+              salary="12 - 15 LPA"
               matchPercentage="98"
             />
             <JobCard
-              title="Product Designer"
+              title="HR "
               company="Innovation Lab"
               location="Remote"
-              salary="$100k - $130k"
+              salary="10 - 13 LPA"
               matchPercentage="95"
             />
           </div>

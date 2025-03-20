@@ -20,10 +20,12 @@ function Header() {
           Mentorship
         </a>
       </nav>
-      <div
-        className="box-border p-0 m-0 ml-auto w-8 h-8 bg-indigo-600 rounded-full"
-        aria-label="User profile"
-      />
+      <button
+        className="ml-auto px-4 py-2 bg-indigo-600 text-white rounded"
+        aria-label="Sign In"
+      >
+        Sign In
+      </button>
     </header>
   );
 }

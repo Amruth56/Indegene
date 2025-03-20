@@ -6,11 +6,11 @@ const JobDetailsCard = () => {
       <div className="flex flex-wrap gap-5 justify-between max-md:max-w-full">
         <div className="py-px">
           <h2 className="text-2xl font-bold leading-none text-gray-900">
-            Senior Product Designer
+            Senior HR Manager
           </h2>
           <div className="flex gap-5 py-1 pr-8 mt-4 max-md:pr-5">
             <p className="grow text-base leading-none text-gray-600">
-              Google Inc.
+            IndeGene.
             </p>
             <div className="flex gap-1">
               <div className="flex overflow-hidden justify-center items-center self-start min-h-4">
@@ -21,7 +21,7 @@ const JobDetailsCard = () => {
                 />
               </div>
               <p className="text-base leading-none text-gray-600 basis-auto">
-                San Francisco, CA
+                Banglore, India
               </p>
             </div>
           </div>

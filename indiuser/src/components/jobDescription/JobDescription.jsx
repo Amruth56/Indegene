@@ -8,7 +8,7 @@ const JobDescription = () => {
       </h2>
       <p className="flex flex-col py-1.5 pr-6 mt-4 text-gray-600 max-md:pr-5 max-md:max-w-full">
         <span className="max-md:max-w-full">
-          We're looking for a Senior Product Designer to join our team and help
+          We're looking for a Senior Hr Manager to join our team and help
           shape the future of our digital
         </span>
         <span className="self-start mt-2">products...</span>
