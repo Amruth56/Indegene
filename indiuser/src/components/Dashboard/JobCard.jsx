@@ -7,12 +7,12 @@ function JobCard({ title, company, location, salary, matchPercentage }) {
         <div className="flex flex-col gap-2">
           <h3 className="text-base font-bold text-black">{title}</h3>
           <p className="text-sm text-gray-500">
-            {company} • {location}
+            {/* {company} • {location} */}
           </p>
         </div>
-        <div className="px-2 py-1 text-xs text-emerald-700 bg-emerald-100 rounded-full">
+        {/* <div className="px-2 py-1 text-xs text-emerald-700 bg-emerald-100 rounded-full">
           {matchPercentage}% Match
-        </div>
+        </div> */}
       </div>
       <div className="flex justify-between items-center">
         <div className="text-base text-gray-600">{salary}</div>

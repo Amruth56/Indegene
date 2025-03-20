@@ -1,19 +1,69 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "./Sidebar";
 import StatCard from "./StatCard";
 import JobCard from "./JobCard";
 import CareerOpportunityCard from "./CareerOpportunityCard";
-import AiAssistant from "./AiAssistant";
 import NotificationIcon from "./NotificationIcon";
 import ChatInterface from "../Chatbot/ChatInterface";
 
 function Dashboard() {
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [recommendedJobs, setRecommendedJobs] = useState([]); // State to store recommended jobs
+  const [loading, setLoading] = useState(false); // State to manage loading state
 
   const toggleChat = () => {
     setIsChatOpen(!isChatOpen);
   };
+
+  const fetchRecommendedJobs = async () => {
+    try {
+      debugger
+      console.log("Fetching jobs...");
+      setLoading(true);
+      const response = await fetch("http://139.84.135.32:8001/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: "Hi, I am Tharun Ganesh, help me to find the suitable job roles (only the role names and don't include any preambles)",
+        }),
+      });
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      const data = await response.json();
+      console.log("API Response:", data); // Log the response to verify it's valid
+  
+      // Parse the response to extract job role titles
+      const jobRoles = data.response
+        .split("\n") // Split by newline
+        .map((role) => role.replace("- ", "").trim()) // Remove "- " and trim whitespace
+        .filter((role) => role); // Remove any empty strings
+  
+      console.log("jobroles", jobRoles); // Log the job roles after parsing
+  
+      // Transform job roles into JobCard-compatible data
+      const jobCardsData = jobRoles.map((title) => ({
+        title: title,
+      }));
+  
+      setRecommendedJobs(jobCardsData); // Update state with transformed data
+    } catch (error) {
+      console.error("Error fetching recommended jobs:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  
+  // Fetch recommended jobs from the API
+  useEffect(() => {
+    fetchRecommendedJobs();
+  }, []); // Empty dependency array ensures this effect runs once on mount
+   // Fetch data when the component mounts
 
   return (
     <main className="flex w-full bg-gray-50 min-h-screen">
@@ -84,20 +134,17 @@ function Dashboard() {
             </button>
           </div>
           <div className="flex gap-4 max-md:flex-wrap">
-            <JobCard
-              title="HR Manager"
-              company="Development Team"
-              location="India"
-              salary="12 - 15 LPA"
-              matchPercentage="98"
-            />
-            <JobCard
-              title="HR "
-              company="Innovation Lab"
-              location="Remote"
-              salary="10 - 13 LPA"
-              matchPercentage="95"
-            />
+            {loading ? (
+              <p>Loading recommended jobs...</p>
+            ) : (
+              recommendedJobs.slice(0, 3).map((job, index) => (
+                <JobCard
+                  key={index}
+                  title={job.title}
+                  company={job.company}
+                />
+              ))
+            )}
           </div>
         </section>
         <section className="flex gap-4 max-md:flex-wrap">
