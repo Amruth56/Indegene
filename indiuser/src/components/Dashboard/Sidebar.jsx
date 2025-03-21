@@ -20,8 +20,8 @@ function Sidebar() {
           </div>
         )}
         <div className="flex flex-col gap-0.5 justify-center max-md:hidden">
-          <h2 className="text-sm font-bold leading-4 text-black">Dharani S</h2>
-          <p className="text-xs leading-3 text-gray-500">HR Manager</p>
+          <h2 className="text-sm font-bold leading-4 text-black">Tharun Ganesh</h2>
+          <p className="text-xs leading-3 text-gray-500">Azure Developer</p>
         </div>
       </div>
 
