@@ -1,21 +1,26 @@
 import React from "react";
 
-function JobCard({ title, company, location, salary, matchPercentage }) {
+function JobCard({ title, location, description, experience }) {
   return (
     <article className="flex-1 p-6 bg-white rounded-xl shadow-sm min-w-[300px]">
       <div className="flex justify-between items-center mb-4">
         <div className="flex flex-col gap-2">
           <h3 className="text-base font-bold text-black">{title}</h3>
-          <p className="text-sm text-gray-500">
-            {/* {company} • {location} */}
-          </p>
+          <p className="text-sm text-gray-500">{location}</p>
         </div>
         {/* <div className="px-2 py-1 text-xs text-emerald-700 bg-emerald-100 rounded-full">
           {matchPercentage}% Match
         </div> */}
       </div>
-      <div className="flex justify-between items-center">
-        <div className="text-base text-gray-600">{salary}</div>
+      <div className="flex flex-col gap-3">
+        <div className="text-sm text-gray-600">
+           {experience}
+        </div>
+        <div className="text-sm text-gray-600">
+           {description}
+        </div>
+      </div>
+      <div className="flex justify-end mt-4">
         <button aria-label="View job details">
           <svg
             width="14"

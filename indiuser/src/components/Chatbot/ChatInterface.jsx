@@ -20,14 +20,6 @@ export default function ChatInterface({ toggleChat }) {
         <MessageArea />
         <QuickActionsArea />
         <ChatInput />
-
-        {/* Close button */}
-        <button
-          className="absolute top-2 right-2 text-xl text-gray-500"
-          onClick={toggleChat}
-        >
-          &times; {/* Close Icon */}
-        </button>
       </div>
     </>
   );
