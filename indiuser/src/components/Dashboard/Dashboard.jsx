@@ -61,6 +61,7 @@ function Dashboard() {
   
   // Fetch recommended jobs from the API
   useEffect(() => {
+    debugger
     fetchRecommendedJobs();
   }, []); // Empty dependency array ensures this effect runs once on mount
    // Fetch data when the component mounts
