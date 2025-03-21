@@ -3,22 +3,16 @@ import React from "react";
 
 function Sidebar() {
 
-  const userProfileImage ="https://cdn.builder.io/api/v1/image/assets/TEMP/beb752e084ca61385da4fcf34b0a446ccc4881b6"
+  const userName ="Tharun Ganesh"
 
   return (
     <nav className="flex flex-col gap-8 py-6 pr-4 pl-4 w-64 bg-white   max-md:w-20 max-sm:hidden">
       <div className="flex gap-3 items-center h-10 max-md:justify-center">
-      {userProfileImage ? (
-          <img
-            src={userProfileImage}
-            alt="User profile"
-            className="w-[40px] h-[40px] rounded-[9999px]"
-          />
-        ) : (
+     
           <div className="w-[40px] h-[40px] rounded-[9999px] bg-gray-300 flex items-center justify-center">
             <span className="text-sm font-bold text-black">{userName.charAt(0)}</span>
           </div>
-        )}
+        
         <div className="flex flex-col gap-0.5 justify-center max-md:hidden">
           <h2 className="text-sm font-bold leading-4 text-black">Tharun Ganesh</h2>
           <p className="text-xs leading-3 text-gray-500">Azure Developer</p>

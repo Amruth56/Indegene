@@ -47,7 +47,6 @@ function Dashboard() {
 
   const fetchCandidateData = async () => {
     try {
-      debugger
       const response = await fetch(
         `https://prod-00.centralindia.logic.azure.com:443/workflows/4b723b55fdd1429babac8a834ee71339/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=El6-q4PWQnERgjzNyUhQv5R80u_KeXgVnxRq4Vj3jfA&candidate_id=${id}`
       );
