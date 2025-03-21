@@ -71,7 +71,7 @@ function Dashboard() {
       <section className="flex flex-col flex-1 gap-8 p-8 max-sm:p-4">
         <header className="flex justify-between items-center">
           <h1 className="text-2xl font-bold leading-6 text-black">
-            Welcome back, Dharani!
+            {/* Welcome back, Dharani! */}
           </h1>
           <div className="flex gap-4 items-center">
             <button className="flex gap-2 items-center px-4 py-2.5 text-white bg-blue-600 rounded-lg">
@@ -117,11 +117,7 @@ function Dashboard() {
             value="12"
             description="Jobs you've bookmarked"
           />
-          <StatCard
-            title="Profile Views"
-            value="89"
-            description="Last 30 days"
-          />
+
         </section>
 
         <section className="flex flex-col gap-6">
